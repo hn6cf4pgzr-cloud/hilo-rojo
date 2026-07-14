@@ -1,47 +1,88 @@
-🎹 (3 notas de piano)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Joel</title>
+    <style>
+        :root { --fondo-crema: #FDFBF7; --rojo-oscuro: #8B1E22; --gris-suave: #8C8C8C; --texto-principal: #2C2C2C; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--fondo-crema); font-family: 'Georgia', serif; color: var(--texto-principal); text-align: center; padding: 20px; }
+        .contenedor-principal { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .intro-piano { font-size: 1.1rem; color: var(--gris-suave); font-style: italic; margin: 40px 0; animation: desaparecerIntro 5s forwards; }
+        .corazones-linea { color: var(--rojo-oscuro); letter-spacing: 5px; font-size: 1.2rem; margin-top: 10px; }
+        .foto-principal { width: 90%; max-width: 320px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin: 10px 0; }
+        h1 { font-size: 1.8rem; color: var(--rojo-oscuro); font-weight: normal; letter-spacing: 2px; margin-bottom: 15px; }
+        p.leyenda { font-size: 1.05rem; line-height: 1.6; width: 90%; margin: 10px 0; }
+        .separador { width: 90%; border: none; border-top: 1px dashed var(--rojo-oscuro); margin: 30px 0; }
+        .flecha-deslizar { font-size: 1.2rem; color: var(--rojo-oscuro); animation: bounce 2s infinite; margin-top: 15px; }
+        .imagen-hilo-rojo { width: 90%; max-width: 250px; border-radius: 20px; margin: 20px 0; cursor: pointer; transition: transform 0.3s; }
+        .imagen-hilo-rojo:hover { transform: scale(1.05); }
+        .boton-hilo { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 10px 0; }
+        .pelicula-fotos { display: none; width: 90%; max-width: 320px; position: relative; margin-top: 20px; }
+        .foto-carrusel { width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: none; animation: fadeInFoto 1s ease-in-out; }
+        @keyframes desaparecerIntro { 0% { opacity: 1; } 80% { opacity: 0; } 100% { display: none; height: 0; margin: 0; overflow: hidden; } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes fadeInFoto { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+    <div class="contenedor-principal">
+        <div class="intro-piano">
+            <span style="font-size: 1.3rem; display: block; margin-bottom: 10px;">🎹 🎹 🎹</span>
+            "Para la persona que cambió mi vida..."
+        </div>
+        <div class="corazones-linea">❤️ ❤️ ❤️ ❤️ ❤️</div>
+        <img src="IMG_9698.jpeg" alt="Mirelly y Joel" class="foto-principal">
+        <h1>MIRELLY & Joel</h1>
+        <p class="leyenda">Una leyenda japonesa dice que dos personas destinadas a encontrarse están unidas por un hilo rojo invisible que nunca se rompe.</p>
+        <p class="leyenda">Me alegra que mi hilo rojo me haya llevado hasta ti.</p>
+        <div class="flecha-deslizar">⬇️</div>
+        <hr class="separador">
+        <p class="leyenda">Si este hilo rojo realmente existe, gracias por sostener el otro extremo. Mi corazón encontró un lugar al que siempre quiere volver. Te amo. ❤️</p>
+        <div class="flecha-deslizar">⬇️</div>
+        <hr class="separador">
+        
+        <!-- IMAGEN HILO ROJO COMO BOTÓN -->
+        <button class="boton-hilo" onclick="iniciarSorpresa()">
+            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" alt="Toca aquí el hilo rojo" class="imagen-hilo-rojo">
+            <p style="color: var(--rojo-oscuro); font-weight: bold; font-size: 1.2rem;">Toca el hilo rojo para empezar ❤️</p>
+        </button>
 
-"Para la persona que cambió mi vida..."
-
-(Desaparece)
-
-❤️ ❤️ ❤️ ❤️ ❤️
-
-📷 Foto de ustedes
-
-MIRELLY & Joel
-
-Una leyenda japonesa...
-
-Dice que dos personas destinadas a encontrarse están unidas por un hilo rojo invisible.
-
-Puede estirarse, enredarse o perderse entre los caminos de la vida...
-
-Pero nunca se rompe.
-
-❤️
-
-Me alegra que mi hilo rojo me haya llevado hasta ti.
-
-⬇️
-
-Desliza para descubrir algo más... ❤️
-
-────────────────────────
-
-❤️
-
-Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo. Porque desde que llegaste a mi vida, mi corazón encontró un lugar al que siempre quiere volver.
-
-Te amo. ❤️
-
-⬇️
-
-Desliza para descubrir algo más... ❤️
-
-────────────────────────
-
-🤲❤️🤲
-
-Toca el hilo rojo ❤️
-
-(Se abre el video)
+        <audio id="musica-piano" src="piano-intro.mp3.m4a" autoplay></audio>
+        <audio id="musica-admv" loop></audio>
+        <div id="zona-fotos" class="pelicula-fotos"></div>
+    </div>
+    <script>
+        var fotos = [], indiceActual = 0, intervalo;
+        async function cargarArchivos() {
+            try {
+                const res = await fetch('https://api.github.com/repos/hn6cf4pgzr-cloud/hilo-rojo/contents/');
+                const files = await res.json();
+                document.getElementById('musica-admv').src = files.find(f => f.name.includes('Maluma')).name;
+                const imagenes = files.filter(f => ['jpg','jpeg','png'].includes(f.name.split('.').pop().toLowerCase()) && f.name !== 'IMG_9698.jpeg');
+                const zona = document.getElementById('zona-fotos');
+                imagenes.forEach(f => {
+                    const img = document.createElement('img');
+                    img.src = f.name; img.className = 'foto-carrusel';
+                    zona.appendChild(img);
+                });
+                fotos = document.getElementsByClassName('foto-carrusel');
+            } catch (e) { console.error(e); }
+        }
+        window.addEventListener('load', cargarArchivos);
+        function iniciarSorpresa() {
+            document.getElementById('musica-piano').pause();
+            document.getElementById('zona-fotos').style.display = 'block';
+            document.getElementById('musica-admv').play();
+            cambiarFoto();
+            if(!intervalo) intervalo = setInterval(cambiarFoto, 3000);
+        }
+        function cambiarFoto() {
+            for (let i=0; i<fotos.length; i++) fotos[i].style.display = 'none';
+            if (fotos[indiceActual]) fotos[indiceActual].style.display = 'block';
+            indiceActual = (indiceActual + 1) % fotos.length;
+        }
+    </script>
+</body>
+</html>
