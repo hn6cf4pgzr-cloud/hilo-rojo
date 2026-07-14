@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Joel</title>
+    <style>
+        :root {
+            --fondo-crema: #FDFBF7;
+            --rojo-oscuro: #8B1E22;
+            --gris-suave: #8C8C8C;
+            --texto-principal: #2C2C2C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--fondo-crema);
+            font-family: 'Georgia', serif;
+            color: var(--texto-principal);
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .pantalla {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .frase-inicial {
+            font-size: 1.1rem;
+            color: var(--gris-suave);
+            font-style: italic;
+            opacity: 0;
+            animation: fadeInOut 4s forwards;
+            margin-bottom: 30px;
+        }
+
+        .contenido-portada {
+            opacity: 0;
+            animation: fadeIn 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 3.5s;
+        }
+
+        .foto-principal {
+            width: 85%;
+            max-width: 320px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--rojo-oscuro);
+            font-weight: normal;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        p.leyenda {
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 300px;
+            margin-bottom: 15px;
+        }
+
+        .corazon {
+            color: var(--rojo-oscuro);
+            margin: 15px 0;
+        }
+
+        .flecha-deslizar {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: var(--rojo-oscuro);
+            animation: bounce 2s infinite;
+        }
+
+        .pantalla-dos p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 310px;
+            color: var(--texto-principal);
+        }
+
+        .boton-hilo {
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .boton-hilo:active {
+            transform: scale(0.95);
+        }
+
+        .texto-hilo {
+            font-size: 0.95rem;
+            color: var(--rojo-oscuro);
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .contenedor-foto-firma {
+            position: relative;
+            margin-top: 40px;
+            width: 85%;
+            max-width: 320px;
+        }
+
+        .firma-diminuta {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            font-size: 0.65rem;
+            color: var(--gris-suave);
+            background-color: rgba(253, 251, 247, 0.8);
+            padding: 4px 8px;
+            border-radius: 4px;
+            opacity: 0;
+            animation: fadeInOutFirma 6s forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            30% { opacity: 1; }
+            70% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInOutFirma {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="pantalla">
+        <div class="frase-inicial">Para la persona que cambió mi vida…</div>
+        
+        <div class="contenido-portada">
+            <img src="foto-beso.jpg" alt="Mirelly y Joel" class="foto-principal">
+            
+            <h1>MIRELLY & Joel</h1>
+            
+            <p class="leyenda">🌸 Una leyenda japonesa…</p>
+            <p class="leyenda">Dice que dos personas destinadas a encontrarse están unidas por un hilo rojo invisible.</p>
+            <p class="leyenda">Puede estirarse, enredarse o perderse entre los caminos de la vida…</p>
+            <p class="leyenda">Pero nunca se rompe.</p>
+            
+            <div class="corazon">❤️</div>
+            
+            <p class="leyenda">Me alegra que mi hilo rojo me haya llevado hasta ti.</p>
+            <div class="flecha-deslizar">⬇️</div>
+        </div>
+    </section>
+
+    <section class="pantalla pantalla-dos">
+        <p>Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo. Porque desde que llegaste a mi vida, mi corazón encontró un lugar al que siempre quiere volver. Te amo. ❤️</p>
+        <div class="flecha-deslizar" style="animation-delay: 0.5s;">⬇️</div>
+    </section>
+
+    <section class="pantalla">
+        <a href="https://www.youtube.com/watch?v=kYJv9Sg7m6c" target="_blank" class="boton-hilo">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#8B1E22"/>
+            </svg>
+            <div class="texto-hilo">❤️ Toca el hilo rojo para descubrir nuestro recuerdo ❤️</div>
+        </a>
+
+        <div class="contenedor-foto-firma">
+            <img src="foto-beso.jpg" alt="Nuestro Instante" class="foto-principal" style="margin-bottom: 0; filter: brightness(0.9);">
+            <div class="firma-diminuta">“Cada historia de amor comienza con un instante…”</div>
+        </div>
+    </section>
+
+</body>
+</html>
