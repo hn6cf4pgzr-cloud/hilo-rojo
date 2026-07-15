@@ -5,71 +5,66 @@
     <title>Para mi Amor ❤️</title>
     <style>
         body { 
-            background-color: #FDFBF7; 
+            background-color: #F5EFE6; 
             font-family: 'Georgia', serif; 
             text-align: center; 
             color: #2C2C2C; 
             margin: 0; 
-            padding: 40px 20px; /* Margen superior amplio */
+            padding: 20px 15px;
         }
-        .contenido { max-width: 450px; margin: 0 auto; }
+        .contenido { max-width: 400px; margin: 0 auto; }
+        
+        h1, h2 { font-weight: bold; }
+        p { font-size: 1.5rem; font-weight: bold; line-height: 1.4; margin: 30px 0; }
+        
+        /* Indicaciones románticas */
+        .indicacion { font-size: 1.1rem; color: #8B1E22; font-style: italic; opacity: 0.8; margin-bottom: 40px; }
+        
         .corazon { font-size: 2.5rem; animation: latido 1.5s infinite; }
         @keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
         
-        .boton-guitarra { background: #8B1E22; color: white; padding: 20px 40px; border-radius: 50px; border: none; font-size: 1.3rem; cursor: pointer; margin: 30px 0; }
+        .boton-guitarra { background: #8B1E22; color: white; padding: 20px; border-radius: 15px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; width: 100%; }
         
-        /* Ajuste de foto y nombres */
-        .foto-principal { width: 100%; max-width: 350px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); margin-bottom: 20px; }
-        .nombres { font-size: 2rem; color: #8B1E22; margin: 10px 0; }
+        .foto { width: 100%; border-radius: 15px; margin: 15px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .hilo-click { width: 180px; cursor: pointer; margin: 20px 0; transition: transform 0.3s; }
         
-        /* Texto más grande y separado */
-        .texto-historia { font-size: 1.4rem; line-height: 1.8; margin: 40px 0; }
-        
-        .hilo-click { width: 220px; cursor: pointer; margin: 40px 0; transition: transform 0.3s; }
-        .hilo-click:hover { transform: scale(1.05); }
-        
-        #zona-video { display: none; margin-top: 50px; }
-        .slide { display: none; width: 100%; max-width: 450px; border-radius: 20px; margin: auto; }
+        #zona-video { display: none; margin-top: 20px; }
+        .slide { display: none; width: 100%; border-radius: 15px; }
     </style>
 </head>
 <body>
     <div class="contenido">
         <h1><span class="corazon">❤️</span> Para ti, Amor de mi vida <span class="corazon">❤️</span></h1>
-        <button class="boton-guitarra" onclick="iniciarMelodia()">Presiona aquí para escuchar mi melodía especial 🎸</button>
+        <button class="boton-guitarra" onclick="iniciarMelodia()">Presiona aquí para escuchar mi melodía 🎸</button>
+        <p class="indicacion">Una canción especial para un momento único...</p>
 
-        <img src="IMG_9698.jpeg" class="foto-principal">
-        <h2 class="nombres">MIRELLY & Joel</h2>
-        <p><span class="corazon">❤️ ❤️ ❤️ ❤️ ❤️</span></p>
-
-        <div class="texto-historia">
-            <p>Una leyenda japonesa dice que dos personas destinadas a encontrarse están unidas por un hilo rojo invisible.</p>
-            <p>Puede estirarse, enredarse o perderse entre los caminos de la vida... pero nunca se rompe. ❤️</p>
-            <p>Me alegra que mi hilo rojo me haya llevado hasta ti.</p>
-        </div>
-
-        <div class="texto-historia">
-            <p>Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo.</p>
-            <p>Porque desde que llegaste a mi vida, mi corazón encontró un lugar al que siempre quiere volver.</p>
-            <p>Te amo. ❤️</p>
-        </div>
+        <img src="IMG_9698.jpeg" class="foto">
+        <h2>MIRELLY & Joel</h2>
+        <p class="indicacion">Sigue bajando, que esto apenas comienza... ✨</p>
         
-        <p style="font-size: 1.2rem;">🤲 Toca el hilo rojo para ver nuestra historia ❤️</p>
+        <p>Una leyenda japonesa dice que dos personas destinadas a encontrarse están unidas por un hilo rojo invisible.</p>
+        <p>Puede estirarse, enredarse o perderse entre los caminos de la vida... pero nunca se rompe. ❤️</p>
+        <p class="indicacion">Me alegra que mi hilo rojo me haya llevado hasta ti... Desliza más. ⬇️</p>
+
+        <p>Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo.</p>
+        <p>Porque desde que llegaste a mi vida, mi corazón encontró un lugar al que siempre quiere volver. Te amo. ❤️</p>
+        
+        <p class="indicacion">¿Listo para ver nuestra historia en movimiento? Toca el hilo rojo aquí abajo... 🤲❤️🤲</p>
         <img src="IMG_9794.jpeg" class="hilo-click" onclick="abrirVideo()">
 
         <div id="zona-video">
-            <div id="slider">
-                <img src="IMG_3241.jpeg" class="slide active"><img src="IMG_3324.jpeg" class="slide">
-                <img src="IMG_3431.jpeg" class="slide"><img src="IMG_3511.jpeg" class="slide">
-                <img src="IMG_3545.jpeg" class="slide"><img src="IMG_3556.jpeg" class="slide">
-                <img src="IMG_3669.jpeg" class="slide"><img src="IMG_3746.jpeg" class="slide">
-                <img src="IMG_3801.jpeg" class="slide"><img src="IMG_9698.jpeg" class="slide">
-                <img src="temp_image_03A038E1-E82B-4BE9-AE35-9610C35B9A45.jpeg" class="slide">
-                <img src="temp_image_299E5277-A313-4BA3-B244-C597D861A703.slide">
-                <img src="temp_image_53C000E4-6882-4501-B9E4-D4C53556D869.jpeg" class="slide">
-                <img src="temp_image_6B815619-CE92-43FC-823E-160B5B1123D6.jpeg" class="slide">
-                <img src="temp_image_774D0D17-9D69-42B5-AB2E-2DE79237F026.jpeg" class="slide">
-                <img src="IMG_9698.jpeg" class="slide">
-            </div>
+            <!-- Tus 17 fotos -->
+            <img src="IMG_3241.jpeg" class="slide active"><img src="IMG_3324.jpeg" class="slide">
+            <img src="IMG_3431.jpeg" class="slide"><img src="IMG_3511.jpeg" class="slide">
+            <img src="IMG_3545.jpeg" class="slide"><img src="IMG_3556.jpeg" class="slide">
+            <img src="IMG_3669.jpeg" class="slide"><img src="IMG_3746.jpeg" class="slide">
+            <img src="IMG_3801.jpeg" class="slide"><img src="IMG_9698.jpeg" class="slide">
+            <img src="temp_image_03A038E1-E82B-4BE9-AE35-9610C35B9A45.jpeg" class="slide">
+            <img src="temp_image_299E5277-A313-4BA3-B244-C597D861A703.jpeg" class="slide">
+            <img src="temp_image_53C000E4-6882-4501-B9E4-D4C53556D869.jpeg" class="slide">
+            <img src="temp_image_6B815619-CE92-43FC-823E-160B5B1123D6.jpeg" class="slide">
+            <img src="temp_image_774D0D17-9D69-42B5-AB2E-2DE79237F026.jpeg" class="slide">
+            <img src="IMG_9698.jpeg" class="slide">
         </div>
     </div>
 
