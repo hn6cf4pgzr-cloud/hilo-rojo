@@ -17,7 +17,7 @@
         .foto { width: 100%; border-radius: 15px; margin: 15px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
         .hilo-click { width: 200px; cursor: pointer; margin: 20px 0; transition: transform 0.3s; }
         #zona-video { display: none; margin-top: 40px; }
-        .slide { display: none; width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
+        .slide, .video-slide { display: none; width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
     </style>
 </head>
 <body>
@@ -68,6 +68,9 @@
                 <img src="IMG_9866.jpeg" class="slide">
                 <img src="IMG_9867.jpeg" class="slide">
                 <img src="IMG_9868.jpeg" class="slide">
+                <img src="IMG_9865.jpeg" class="slide">
+                <img src="IMG_9883.jpeg" class="slide">
+                <video src="IMG_8522.mov" class="video-slide" muted autoplay loop playsinline></video>
             </div>
         </div>
     </div>
@@ -83,21 +86,26 @@
         }
 
         function reproducirMusica() {
-            var audio = document.getElementById('audio-guitarra');
-            audio.play();
+            document.getElementById('audio-guitarra').play();
         }
 
         function abrirVideo() {
             document.getElementById('audio-guitarra').pause();
             document.getElementById('audio-maluma').play();
             document.getElementById('zona-video').style.display = 'block';
-            let slides = document.querySelectorAll('.slide');
+            
+            let items = document.querySelectorAll('.slide, .video-slide');
             let i = 0;
-            slides[0].style.display = 'block';
+            items[0].style.display = 'block';
+            
             setInterval(() => {
-                slides[i].style.display = 'none';
-                i = (i + 1) % slides.length;
-                slides[i].style.display = 'block';
+                items[i].style.display = 'none';
+                i = (i + 1) % items.length;
+                items[i].style.display = 'block';
+                let currentItem = items[i];
+                if (currentItem.tagName === 'VIDEO') {
+                    currentItem.muted = true;
+                }
             }, 2000);
         }
     </script>
