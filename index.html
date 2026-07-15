@@ -4,19 +4,11 @@
     <meta charset="UTF-8">
     <title>Para mi Amor ❤️</title>
     <style>
-        /* Rojo suave y elegante */
-        body { 
-            background-color: #B22222; 
-            font-family: 'Georgia', serif; 
-            text-align: center; 
-            color: #FFF; 
-            margin: 0; 
-            padding: 20px 15px;
-            overflow-x: hidden;
-        }
+        /* Diseño Granate y Romántico */
+        body { background-color: #800020; font-family: 'Georgia', serif; text-align: center; color: #FFFFFF; margin: 0; padding: 20px 15px; overflow-x: hidden; }
         .contenido { max-width: 400px; margin: 0 auto; position: relative; }
         
-        /* Corazones flotantes */
+        /* Animación de corazones */
         .corazon-flotante { position: fixed; font-size: 20px; animation: flotar 5s linear infinite; pointer-events: none; z-index: 1000; }
         @keyframes flotar { 0% { transform: translateY(100vh); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(-10vh); opacity: 0; } }
 
@@ -27,12 +19,12 @@
         .corazon { font-size: 2.5rem; animation: latido 1.5s infinite; }
         @keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
         
-        .boton-guitarra { background: #FFF; color: #B22222; padding: 20px; border-radius: 15px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .foto { width: 100%; border-radius: 15px; margin: 15px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .boton-guitarra { background: #FFFFFF; color: #800020; padding: 20px; border-radius: 15px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .foto { width: 100%; border-radius: 15px; margin: 15px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
         .hilo-click { width: 200px; cursor: pointer; margin: 20px 0; transition: transform 0.3s; }
         
         #zona-video { display: none; margin-top: 40px; }
-        .slide { display: none; width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+        .slide { display: none; width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
     </style>
 </head>
 <body>
@@ -59,17 +51,26 @@
 
         <div id="zona-video">
             <div id="slider">
-                <img src="IMG_3241.jpeg" class="slide active"><img src="IMG_3324.jpeg" class="slide">
-                <img src="IMG_3431.jpeg" class="slide"><img src="IMG_3511.jpeg" class="slide">
-                <img src="IMG_3545.jpeg" class="slide"><img src="IMG_3556.jpeg" class="slide">
-                <img src="IMG_3669.jpeg" class="slide"><img src="IMG_3746.jpeg" class="slide">
-                <img src="IMG_3801.jpeg" class="slide"><img src="IMG_9698.jpeg" class="slide">
+                <img src="IMG_3241.jpeg" class="slide active">
+                <img src="IMG_3324.jpeg" class="slide">
+                <img src="IMG_3431.jpeg" class="slide">
+                <img src="IMG_3511.jpeg" class="slide">
+                <img src="IMG_3545.jpeg" class="slide">
+                <img src="IMG_3556.jpeg" class="slide">
+                <img src="IMG_3669.jpeg" class="slide">
+                <img src="IMG_3746.jpeg" class="slide">
+                <img src="IMG_3801.jpeg" class="slide">
+                <img src="IMG_8355.jpeg" class="slide">
+                <img src="IMG_8427.jpeg" class="slide">
+                <img src="IMG_9698.jpeg" class="slide">
+                <img src="IMG_9794.jpeg" class="slide">
+                <img src="IMG_9831.png" class="slide">
                 <img src="temp_image_03A038E1-E82B-4BE9-AE35-9610C35B9A45.jpeg" class="slide">
                 <img src="temp_image_299E5277-A313-4BA3-B244-C597D861A703.jpeg" class="slide">
                 <img src="temp_image_53C000E4-6882-4501-B9E4-D4C53556D869.jpeg" class="slide">
                 <img src="temp_image_6B815619-CE92-43FC-823E-160B5B1123D6.jpeg" class="slide">
+                <img src="temp_image_744CAB1F-C13C-4BF0-A708-E4C20464673A.jpeg" class="slide">
                 <img src="temp_image_774D0D17-9D69-42B5-AB2E-2DE79237F026.jpeg" class="slide">
-                <img src="IMG_9698.jpeg" class="slide">
             </div>
         </div>
     </div>
@@ -83,7 +84,6 @@
             c.style.animationDuration = (Math.random() * 3 + 3) + 's';
             document.body.appendChild(c);
         }
-
         function iniciarMelodia() { document.getElementById('audio-guitarra').play(); }
         function abrirVideo() {
             document.getElementById('audio-guitarra').pause();
