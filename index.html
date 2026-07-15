@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Para mi Amor ❤️</title>
     <style>
-        /* Fondo rojo suave y tipografía clara */
+        /* Rojo suave y elegante */
         body { 
-            background-color: #D35D5D; 
+            background-color: #B22222; 
             font-family: 'Georgia', serif; 
             text-align: center; 
             color: #FFF; 
@@ -16,7 +16,7 @@
         }
         .contenido { max-width: 400px; margin: 0 auto; position: relative; }
         
-        /* Animación de corazones flotantes por toda la página */
+        /* Corazones flotantes */
         .corazon-flotante { position: fixed; font-size: 20px; animation: flotar 5s linear infinite; pointer-events: none; z-index: 1000; }
         @keyframes flotar { 0% { transform: translateY(100vh); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(-10vh); opacity: 0; } }
 
@@ -27,7 +27,7 @@
         .corazon { font-size: 2.5rem; animation: latido 1.5s infinite; }
         @keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
         
-        .boton-guitarra { background: #FFF; color: #D35D5D; padding: 20px; border-radius: 15px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .boton-guitarra { background: #FFF; color: #B22222; padding: 20px; border-radius: 15px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
         .foto { width: 100%; border-radius: 15px; margin: 15px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .hilo-click { width: 200px; cursor: pointer; margin: 20px 0; transition: transform 0.3s; }
         
@@ -55,7 +55,6 @@
         <p class="indicacion">Toca el hilo rojo aquí abajo para ver nuestra historia... 🤲❤️🤲</p>
         <img src="IMG_9794.jpeg" class="hilo-click" onclick="abrirVideo()">
         
-        <!-- Indicación extra -->
         <p class="indicacion" style="margin-top: 10px;">¡Ahora baja un poquito más para ver nuestro video! 🎬❤️</p>
 
         <div id="zona-video">
@@ -76,7 +75,6 @@
     </div>
 
     <script>
-        // Generar corazones que flotan
         for(let i=0; i<15; i++) {
             let c = document.createElement('div');
             c.innerHTML = '❤️';
