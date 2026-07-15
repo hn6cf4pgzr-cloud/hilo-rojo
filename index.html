@@ -2,9 +2,36 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Para Joel</title>
+    <title>Para Joel ❤️</title>
+    <style>
+        body { background-color: #FDFBF7; font-family: 'Georgia', serif; text-align: center; padding: 20px; color: #2C2C2C; }
+        .contenedor { max-width: 400px; margin: 0 auto; }
+        h1 { color: #8B1E22; font-size: 1.5rem; }
+        .hilo-img { width: 100%; max-width: 300px; border-radius: 15px; margin: 20px 0; cursor: pointer; }
+        #zona-fotos { display: none; margin-top: 20px; }
+        .foto { width: 100%; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    </style>
 </head>
 <body>
-    <h1>¡Hola! Esto es una prueba.</h1>
+    <div class="contenedor">
+        <h1>Para la persona que cambió mi vida...</h1>
+        <p>Una leyenda japonesa dice que estamos unidos por un hilo rojo invisible.</p>
+        
+        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" 
+             class="hilo-img" onclick="iniciarSorpresa()" alt="Toca aquí">
+        <p>Toca el hilo rojo para continuar ❤️</p>
+
+        <audio id="musica" src="Maluma_-_ADMV.mp3"></audio>
+        <div id="zona-fotos"></div>
+    </div>
+
+    <script>
+        function iniciarSorpresa() {
+            const audio = document.getElementById('musica');
+            audio.play();
+            alert("¡La sorpresa ha comenzado!");
+            document.getElementById('zona-fotos').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
