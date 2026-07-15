@@ -4,32 +4,35 @@
     <meta charset="UTF-8">
     <title>Para mi Amor ❤️</title>
     <style>
+        /* Fondo rojo suave y tipografía clara */
         body { 
-            background-color: #F5EFE6; 
+            background-color: #D35D5D; 
             font-family: 'Georgia', serif; 
             text-align: center; 
-            color: #2C2C2C; 
+            color: #FFF; 
             margin: 0; 
             padding: 20px 15px;
+            overflow-x: hidden;
         }
-        .contenido { max-width: 400px; margin: 0 auto; }
+        .contenido { max-width: 400px; margin: 0 auto; position: relative; }
         
+        /* Animación de corazones flotantes por toda la página */
+        .corazon-flotante { position: fixed; font-size: 20px; animation: flotar 5s linear infinite; pointer-events: none; z-index: 1000; }
+        @keyframes flotar { 0% { transform: translateY(100vh); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(-10vh); opacity: 0; } }
+
         h1, h2 { font-weight: bold; }
         p { font-size: 1.5rem; font-weight: bold; line-height: 1.4; margin: 30px 0; }
         
-        /* Indicaciones románticas */
-        .indicacion { font-size: 1.1rem; color: #8B1E22; font-style: italic; opacity: 0.8; margin-bottom: 40px; }
-        
+        .indicacion { font-size: 1.2rem; font-style: italic; opacity: 0.9; margin-bottom: 40px; }
         .corazon { font-size: 2.5rem; animation: latido 1.5s infinite; }
         @keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
         
-        .boton-guitarra { background: #8B1E22; color: white; padding: 20px; border-radius: 15px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; width: 100%; }
+        .boton-guitarra { background: #FFF; color: #D35D5D; padding: 20px; border-radius: 15px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .foto { width: 100%; border-radius: 15px; margin: 15px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .hilo-click { width: 200px; cursor: pointer; margin: 20px 0; transition: transform 0.3s; }
         
-        .foto { width: 100%; border-radius: 15px; margin: 15px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .hilo-click { width: 180px; cursor: pointer; margin: 20px 0; transition: transform 0.3s; }
-        
-        #zona-video { display: none; margin-top: 20px; }
-        .slide { display: none; width: 100%; border-radius: 15px; }
+        #zona-video { display: none; margin-top: 40px; }
+        .slide { display: none; width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
     </style>
 </head>
 <body>
@@ -49,29 +52,40 @@
         <p>Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo.</p>
         <p>Porque desde que llegaste a mi vida, mi corazón encontró un lugar al que siempre quiere volver. Te amo. ❤️</p>
         
-        <p class="indicacion">¿Listo para ver nuestra historia en movimiento? Toca el hilo rojo aquí abajo... 🤲❤️🤲</p>
+        <p class="indicacion">Toca el hilo rojo aquí abajo para ver nuestra historia... 🤲❤️🤲</p>
         <img src="IMG_9794.jpeg" class="hilo-click" onclick="abrirVideo()">
+        
+        <!-- Indicación extra -->
+        <p class="indicacion" style="margin-top: 10px;">¡Ahora baja un poquito más para ver nuestro video! 🎬❤️</p>
 
         <div id="zona-video">
-            <!-- Tus 17 fotos -->
-            <img src="IMG_3241.jpeg" class="slide active"><img src="IMG_3324.jpeg" class="slide">
-            <img src="IMG_3431.jpeg" class="slide"><img src="IMG_3511.jpeg" class="slide">
-            <img src="IMG_3545.jpeg" class="slide"><img src="IMG_3556.jpeg" class="slide">
-            <img src="IMG_3669.jpeg" class="slide"><img src="IMG_3746.jpeg" class="slide">
-            <img src="IMG_3801.jpeg" class="slide"><img src="IMG_9698.jpeg" class="slide">
-            <img src="temp_image_03A038E1-E82B-4BE9-AE35-9610C35B9A45.jpeg" class="slide">
-            <img src="temp_image_299E5277-A313-4BA3-B244-C597D861A703.jpeg" class="slide">
-            <img src="temp_image_53C000E4-6882-4501-B9E4-D4C53556D869.jpeg" class="slide">
-            <img src="temp_image_6B815619-CE92-43FC-823E-160B5B1123D6.jpeg" class="slide">
-            <img src="temp_image_774D0D17-9D69-42B5-AB2E-2DE79237F026.jpeg" class="slide">
-            <img src="IMG_9698.jpeg" class="slide">
+            <div id="slider">
+                <img src="IMG_3241.jpeg" class="slide active"><img src="IMG_3324.jpeg" class="slide">
+                <img src="IMG_3431.jpeg" class="slide"><img src="IMG_3511.jpeg" class="slide">
+                <img src="IMG_3545.jpeg" class="slide"><img src="IMG_3556.jpeg" class="slide">
+                <img src="IMG_3669.jpeg" class="slide"><img src="IMG_3746.jpeg" class="slide">
+                <img src="IMG_3801.jpeg" class="slide"><img src="IMG_9698.jpeg" class="slide">
+                <img src="temp_image_03A038E1-E82B-4BE9-AE35-9610C35B9A45.jpeg" class="slide">
+                <img src="temp_image_299E5277-A313-4BA3-B244-C597D861A703.jpeg" class="slide">
+                <img src="temp_image_53C000E4-6882-4501-B9E4-D4C53556D869.jpeg" class="slide">
+                <img src="temp_image_6B815619-CE92-43FC-823E-160B5B1123D6.jpeg" class="slide">
+                <img src="temp_image_774D0D17-9D69-42B5-AB2E-2DE79237F026.jpeg" class="slide">
+                <img src="IMG_9698.jpeg" class="slide">
+            </div>
         </div>
     </div>
 
-    <audio id="audio-guitarra" src="piano-intro.mp3.m4a"></audio>
-    <audio id="audio-maluma" src="Maluma_-_ADMV_(mp3.pm).mp3"></audio>
-
     <script>
+        // Generar corazones que flotan
+        for(let i=0; i<15; i++) {
+            let c = document.createElement('div');
+            c.innerHTML = '❤️';
+            c.className = 'corazon-flotante';
+            c.style.left = Math.random() * 100 + 'vw';
+            c.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            document.body.appendChild(c);
+        }
+
         function iniciarMelodia() { document.getElementById('audio-guitarra').play(); }
         function abrirVideo() {
             document.getElementById('audio-guitarra').pause();
@@ -87,5 +101,7 @@
             }, 2000);
         }
     </script>
+    <audio id="audio-guitarra" src="piano-intro.mp3.m4a"></audio>
+    <audio id="audio-maluma" src="Maluma_-_ADMV_(mp3.pm).mp3"></audio>
 </body>
 </html>
