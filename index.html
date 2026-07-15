@@ -6,13 +6,12 @@
     <style>
         body { background-color: #FDFBF7; font-family: 'Georgia', serif; text-align: center; padding: 20px; color: #2C2C2C; }
         .contenedor { max-width: 400px; margin: 0 auto; }
-        .intro { font-size: 1.2rem; font-style: italic; color: #8C8C8C; margin: 40px 0; animation: fadeOut 4s forwards; }
-        .foto { width: 90%; max-width: 320px; border-radius: 15px; margin: 10px 0; }
+        .intro { font-size: 1.2rem; font-style: italic; color: #8C8C8C; margin: 40px 0; }
+        .foto { width: 90%; max-width: 320px; border-radius: 15px; margin: 10px 0; display: block; margin-left: auto; margin-right: auto; }
         h1 { color: #8B1E22; font-size: 1.8rem; margin: 10px 0; }
         .texto { font-size: 1.1rem; line-height: 1.6; margin: 15px 0; }
-        .hilo-img { width: 80%; max-width: 250px; cursor: pointer; margin: 20px 0; transition: transform 0.3s; }
-        .hilo-img:hover { transform: scale(1.05); }
-        @keyframes fadeOut { 0% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; display: none; } }
+        .hilo-img { width: 80%; max-width: 250px; cursor: pointer; margin: 20px 0; }
+        #zona-fotos { display: none; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -26,27 +25,37 @@
         <p class="texto">Una leyenda japonesa... dice que dos personas destinadas a encontrarse están unidas por un hilo rojo invisible.</p>
         <p class="texto">Puede estirarse, enredarse o perderse entre los caminos de la vida... Pero nunca se rompe. ❤️</p>
         <p class="texto">Me alegra que mi hilo rojo me haya llevado hasta ti. ⬇️</p>
-        <p>Desliza para descubrir algo más... ❤️</p>
         <hr>
-        
-        <p class="texto">Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo. Porque desde que llegaste a mi vida, mi corazón encontró un lugar al que siempre quiere volver. Te amo. ❤️ ⬇️</p>
-        <p>Desliza para descubrir algo más... ❤️</p>
+        <p class="texto">Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo. Te amo. ❤️</p>
         <hr>
         
         <p>🤲❤️🤲</p>
         <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" 
              class="hilo-img" onclick="iniciarSorpresa()" alt="Toca el hilo rojo">
-        <p>Toca el hilo rojo ❤️</p>
+        <p>Toca el hilo rojo para ver nuestra historia ❤️</p>
 
         <audio id="musica-piano" src="piano-intro.mp3.m4a" autoplay></audio>
         <audio id="musica-admv" src="Maluma_-_ADMV_(mp3.pm).mp3"></audio>
+        
+        <div id="zona-fotos">
+            <!-- Aquí cargamos tus 17 fotos -->
+            <img src="IMG_3431.jpeg" class="foto">
+            <img src="IMG_3511.jpeg" class="foto">
+            <img src="IMG_3545.jpeg" class="foto">
+            <img src="IMG_3556.jpeg" class="foto">
+            <img src="IMG_3669.jpeg" class="foto">
+            <img src="IMG_3746.jpeg" class="foto">
+            <img src="IMG_3801.jpeg" class="foto">
+            <img src="IMG_9698.jpeg" class="foto">
+        </div>
     </div>
 
     <script>
         function iniciarSorpresa() {
             document.getElementById('musica-piano').pause();
             document.getElementById('musica-admv').play();
-            alert("¡Se abre el video!");
+            document.getElementById('zona-fotos').style.display = 'block';
+            alert("¡Mira nuestras fotos!");
         }
     </script>
 </body>
