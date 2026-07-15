@@ -11,10 +11,11 @@
         .boton-inicio { background: #8B1E22; color: white; padding: 15px 30px; border-radius: 30px; border: none; font-size: 1.1rem; cursor: pointer; }
         .foto-principal { width: 90%; max-width: 320px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .hilo-final { width: 250px; cursor: pointer; margin: 20px 0; transition: transform 0.3s; }
-        .hilo-final:hover { transform: scale(1.1); }
-        #galeria { display: none; padding: 20px; }
-        .grid-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .foto-galeria { width: 100%; border-radius: 10px; }
+        /* Estilo para que las fotos pasen como video */
+        #galeria { display: none; padding: 20px; position: relative; }
+        .foto-video { width: 100%; max-width: 400px; border-radius: 20px; display: none; }
+        .foto-video.active { display: block; animation: aparecer 0.5s; }
+        @keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -28,52 +29,48 @@
         <img src="IMG_9698.jpeg" class="foto-principal">
         <h1>MIRELLY & Joel</h1>
         <p>Una leyenda japonesa... <br>Dice que dos personas destinadas a encontrarse están unidas por un hilo rojo invisible.</p>
-        <p>Puede estirarse, enredarse o perderse entre los caminos de la vida... Pero nunca se rompe. ❤️</p>
-        <p>⬇️ Desliza para descubrir más...</p>
+        <p>⬇️ Desliza...</p>
     </div>
 
     <div class="seccion">
-        <p>❤️</p>
-        <p>Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo. Porque desde que llegaste a mi vida, mi corazón encontró un lugar al que siempre quiere volver. Te amo. ❤️</p>
-        <p>🤲❤️🤲</p>
-        <p>Toca el hilo rojo para ver nuestra historia:</p>
-        
-        <!-- Tu nueva imagen de hilo rojo -->
-        <img src="IMG_9794.jpeg" class="hilo-final" onclick="iniciarSorpresa()">
-        
-        <button class="boton-inicio" id="btn-audio" onclick="iniciarPiano()">Presiona aquí para nuestra melodía especial 🎹</button>
+        <p>Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo. Te amo. ❤️</p>
+        <img src="IMG_9794.jpeg" class="hilo-final" onclick="iniciarVideo()">
+        <button class="boton-inicio" id="btn-audio" onclick="iniciarPiano()">Presiona aquí para nuestra melodía 🎹</button>
     </div>
 
     <div id="galeria">
-        <div class="grid-fotos">
-            <img src="IMG_3241.jpeg" class="foto-galeria"><img src="IMG_3324.jpeg" class="foto-galeria">
-            <img src="IMG_3431.jpeg" class="foto-galeria"><img src="IMG_3511.jpeg" class="foto-galeria">
-            <img src="IMG_3545.jpeg" class="foto-galeria"><img src="IMG_3556.jpeg" class="foto-galeria">
-            <img src="IMG_3669.jpeg" class="foto-galeria"><img src="IMG_3746.jpeg" class="foto-galeria">
-            <img src="IMG_3801.jpeg" class="foto-galeria"><img src="IMG_9698.jpeg" class="foto-galeria">
-            <img src="temp_image_03A038E1-E82B-4BE9-AE35-9610C35B9A45.jpeg" class="foto-galeria">
-            <img src="temp_image_299E5277-A313-4BA3-B244-C597D861A703.jpeg" class="foto-galeria">
-            <img src="temp_image_53C000E4-6882-4501-B9E4-D4C53556D869.jpeg" class="foto-galeria">
-            <img src="temp_image_6B815619-CE92-43FC-823E-160B5B1123D6.jpeg" class="foto-galeria">
-            <img src="temp_image_774D0D17-9D69-42B5-AB2E-2DE79237F026.jpeg" class="foto-galeria">
-            <img src="IMG_9698.jpeg" class="foto-galeria">
-        </div>
+        <img src="IMG_3241.jpeg" class="foto-video active"><img src="IMG_3324.jpeg" class="foto-video">
+        <img src="IMG_3431.jpeg" class="foto-video"><img src="IMG_3511.jpeg" class="foto-video">
+        <img src="IMG_3545.jpeg" class="foto-video"><img src="IMG_3556.jpeg" class="foto-video">
+        <img src="IMG_3669.jpeg" class="foto-video"><img src="IMG_3746.jpeg" class="foto-video">
+        <img src="IMG_3801.jpeg" class="foto-video"><img src="IMG_9698.jpeg" class="foto-video">
+        <img src="temp_image_03A038E1-E82B-4BE9-AE35-9610C35B9A45.jpeg" class="foto-video">
+        <img src="temp_image_299E5277-A313-4BA3-B244-C597D861A703.jpeg" class="foto-video">
+        <img src="temp_image_53C000E4-6882-4501-B9E4-D4C53556D869.jpeg" class="foto-video">
+        <img src="temp_image_6B815619-CE92-43FC-823E-160B5B1123D6.jpeg" class="foto-video">
+        <img src="temp_image_774D0D17-9D69-42B5-AB2E-2DE79237F026.jpeg" class="foto-video">
+        <img src="IMG_9698.jpeg" class="foto-video">
     </div>
 
     <audio id="musica-piano" src="piano-intro.mp3.m4a"></audio>
     <audio id="musica-admv" src="Maluma_-_ADMV_(mp3.pm).mp3"></audio>
 
     <script>
-        function iniciarPiano() {
-            document.getElementById('musica-piano').play();
-            document.getElementById('btn-audio').style.display = 'none';
-        }
-        function iniciarSorpresa() {
+        function iniciarPiano() { document.getElementById('musica-piano').play(); document.getElementById('btn-audio').style.display = 'none'; }
+        function iniciarVideo() {
             document.getElementById('musica-piano').pause();
             document.getElementById('musica-admv').play();
             document.getElementById('galeria').style.display = 'block';
             window.scrollTo(0, document.body.scrollHeight);
+            let fotos = document.querySelectorAll('.foto-video');
+            let i = 0;
+            setInterval(() => {
+                fotos[i].classList.remove('active');
+                i = (i + 1) % fotos.length;
+                fotos[i].classList.add('active');
+            }, 2000); // Cambia de foto cada 2 segundos
         }
     </script>
 </body>
 </html>
+
