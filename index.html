@@ -4,53 +4,72 @@
     <meta charset="UTF-8">
     <title>Para mi Amor ❤️</title>
     <style>
-        body { background-color: #FDFBF7; font-family: 'Georgia', serif; text-align: center; color: #2C2C2C; margin: 0; padding: 0; }
-        .seccion { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
-        .corazon { font-size: 2rem; animation: latido 1.5s infinite; }
+        body { 
+            background-color: #FDFBF7; 
+            font-family: 'Georgia', serif; 
+            text-align: center; 
+            color: #2C2C2C; 
+            margin: 0; 
+            padding: 40px 20px; /* Margen superior amplio */
+        }
+        .contenido { max-width: 450px; margin: 0 auto; }
+        .corazon { font-size: 2.5rem; animation: latido 1.5s infinite; }
         @keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
-        .boton-guitarra { background: #8B1E22; color: white; padding: 20px 30px; border-radius: 50px; border: none; font-size: 1.2rem; cursor: pointer; }
-        .foto { width: 90%; max-width: 320px; border-radius: 20px; margin: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .hilo-click { width: 200px; cursor: pointer; transition: transform 0.3s; }
-        .hilo-click:hover { transform: scale(1.1); }
-        #zona-video { display: none; }
-        .slide { display: none; width: 90%; max-width: 400px; border-radius: 20px; margin: auto; }
+        
+        .boton-guitarra { background: #8B1E22; color: white; padding: 20px 40px; border-radius: 50px; border: none; font-size: 1.3rem; cursor: pointer; margin: 30px 0; }
+        
+        /* Ajuste de foto y nombres */
+        .foto-principal { width: 100%; max-width: 350px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); margin-bottom: 20px; }
+        .nombres { font-size: 2rem; color: #8B1E22; margin: 10px 0; }
+        
+        /* Texto más grande y separado */
+        .texto-historia { font-size: 1.4rem; line-height: 1.8; margin: 40px 0; }
+        
+        .hilo-click { width: 220px; cursor: pointer; margin: 40px 0; transition: transform 0.3s; }
+        .hilo-click:hover { transform: scale(1.05); }
+        
+        #zona-video { display: none; margin-top: 50px; }
+        .slide { display: none; width: 100%; max-width: 450px; border-radius: 20px; margin: auto; }
     </style>
 </head>
 <body>
-    <div class="seccion">
+    <div class="contenido">
         <h1><span class="corazon">❤️</span> Para ti, Amor de mi vida <span class="corazon">❤️</span></h1>
         <button class="boton-guitarra" onclick="iniciarMelodia()">Presiona aquí para escuchar mi melodía especial 🎸</button>
-    </div>
 
-    <div class="seccion">
+        <img src="IMG_9698.jpeg" class="foto-principal">
+        <h2 class="nombres">MIRELLY & Joel</h2>
         <p><span class="corazon">❤️ ❤️ ❤️ ❤️ ❤️</span></p>
-        <img src="IMG_9698.jpeg" class="foto">
-        <h1>MIRELLY & Joel</h1>
-        <p>Una leyenda japonesa... Dice que dos personas destinadas a encontrarse están unidas por un hilo rojo invisible. Puede estirarse, enredarse o perderse entre los caminos de la vida... Pero nunca se rompe. ❤️</p>
-        <p>Me alegra que mi hilo rojo me haya llevado hasta ti. ⬇️ Desliza para descubrir más...</p>
-    </div>
 
-    <div class="seccion">
-        <p>❤️</p>
-        <p>Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo. Porque desde que llegaste a mi vida, mi corazón encontró un lugar al que siempre quiere volver. Te amo. ❤️</p>
-        <p>🤲❤️🤲</p>
-        <p>Toca el hilo rojo ❤️</p>
+        <div class="texto-historia">
+            <p>Una leyenda japonesa dice que dos personas destinadas a encontrarse están unidas por un hilo rojo invisible.</p>
+            <p>Puede estirarse, enredarse o perderse entre los caminos de la vida... pero nunca se rompe. ❤️</p>
+            <p>Me alegra que mi hilo rojo me haya llevado hasta ti.</p>
+        </div>
+
+        <div class="texto-historia">
+            <p>Si este hilo rojo realmente existe, solo quiero darte las gracias por sostener el otro extremo.</p>
+            <p>Porque desde que llegaste a mi vida, mi corazón encontró un lugar al que siempre quiere volver.</p>
+            <p>Te amo. ❤️</p>
+        </div>
+        
+        <p style="font-size: 1.2rem;">🤲 Toca el hilo rojo para ver nuestra historia ❤️</p>
         <img src="IMG_9794.jpeg" class="hilo-click" onclick="abrirVideo()">
-    </div>
 
-    <div id="zona-video" class="seccion">
-        <div id="slider">
-            <img src="IMG_3241.jpeg" class="slide active"><img src="IMG_3324.jpeg" class="slide">
-            <img src="IMG_3431.jpeg" class="slide"><img src="IMG_3511.jpeg" class="slide">
-            <img src="IMG_3545.jpeg" class="slide"><img src="IMG_3556.jpeg" class="slide">
-            <img src="IMG_3669.jpeg" class="slide"><img src="IMG_3746.jpeg" class="slide">
-            <img src="IMG_3801.jpeg" class="slide"><img src="IMG_9698.jpeg" class="slide">
-            <img src="temp_image_03A038E1-E82B-4BE9-AE35-9610C35B9A45.jpeg" class="slide">
-            <img src="temp_image_299E5277-A313-4BA3-B244-C597D861A703.jpeg" class="slide">
-            <img src="temp_image_53C000E4-6882-4501-B9E4-D4C53556D869.jpeg" class="slide">
-            <img src="temp_image_6B815619-CE92-43FC-823E-160B5B1123D6.jpeg" class="slide">
-            <img src="temp_image_774D0D17-9D69-42B5-AB2E-2DE79237F026.jpeg" class="slide">
-            <img src="IMG_9698.jpeg" class="slide">
+        <div id="zona-video">
+            <div id="slider">
+                <img src="IMG_3241.jpeg" class="slide active"><img src="IMG_3324.jpeg" class="slide">
+                <img src="IMG_3431.jpeg" class="slide"><img src="IMG_3511.jpeg" class="slide">
+                <img src="IMG_3545.jpeg" class="slide"><img src="IMG_3556.jpeg" class="slide">
+                <img src="IMG_3669.jpeg" class="slide"><img src="IMG_3746.jpeg" class="slide">
+                <img src="IMG_3801.jpeg" class="slide"><img src="IMG_9698.jpeg" class="slide">
+                <img src="temp_image_03A038E1-E82B-4BE9-AE35-9610C35B9A45.jpeg" class="slide">
+                <img src="temp_image_299E5277-A313-4BA3-B244-C597D861A703.slide">
+                <img src="temp_image_53C000E4-6882-4501-B9E4-D4C53556D869.jpeg" class="slide">
+                <img src="temp_image_6B815619-CE92-43FC-823E-160B5B1123D6.jpeg" class="slide">
+                <img src="temp_image_774D0D17-9D69-42B5-AB2E-2DE79237F026.jpeg" class="slide">
+                <img src="IMG_9698.jpeg" class="slide">
+            </div>
         </div>
     </div>
 
@@ -62,8 +81,7 @@
         function abrirVideo() {
             document.getElementById('audio-guitarra').pause();
             document.getElementById('audio-maluma').play();
-            document.getElementById('zona-video').style.display = 'flex';
-            window.scrollTo(0, document.body.scrollHeight);
+            document.getElementById('zona-video').style.display = 'block';
             let slides = document.querySelectorAll('.slide');
             let i = 0;
             slides[0].style.display = 'block';
