@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Para mi Amor ❤️</title>
     <style>
-        /* Fondo color vino más oscuro */
         body { background-color: #4A0404; font-family: 'Georgia', serif; text-align: center; color: #FFFFFF; margin: 0; padding: 20px 15px; overflow-x: hidden; }
         .contenido { max-width: 400px; margin: 0 auto; position: relative; }
         .corazon-flotante { position: fixed; font-size: 20px; animation: flotar 5s linear infinite; pointer-events: none; z-index: 1000; }
@@ -14,7 +13,7 @@
         .indicacion { font-size: 1.2rem; font-style: italic; opacity: 0.9; margin-bottom: 20px; }
         .corazon { font-size: 2.5rem; animation: latido 1.5s infinite; }
         @keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
-        .boton-guitarra { background: #FFFFFF; color: #4A0404; padding: 20px; border-radius: 15px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .boton-musica { background: #FFFFFF; color: #4A0404; padding: 20px; border-radius: 15px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .foto { width: 100%; border-radius: 15px; margin: 15px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
         .hilo-click { width: 200px; cursor: pointer; margin: 20px 0; transition: transform 0.3s; }
         #zona-video { display: none; margin-top: 40px; }
@@ -24,7 +23,8 @@
 <body>
     <div class="contenido">
         <h1><span class="corazon">❤️</span> Para ti, Amor de mi vida <span class="corazon">❤️</span></h1>
-        <button class="boton-guitarra" onclick="iniciarMelodia()">Presiona aquí para escuchar mi melodía 🎸</button>
+        
+        <button class="boton-musica" onclick="reproducirMusica()">Presiona aquí para escuchar mi melodía 🎸</button>
         <p class="indicacion">Una canción especial para un momento único...</p>
 
         <img src="IMG_9698.jpeg" class="foto">
@@ -81,5 +81,28 @@
             c.style.animationDuration = (Math.random() * 3 + 3) + 's';
             document.body.appendChild(c);
         }
-        function iniciarMelodia() { document.getElementById('audio-guitarra').play(); }
-        function
+
+        function reproducirMusica() {
+            var audio = document.getElementById('audio-guitarra');
+            audio.play();
+        }
+
+        function abrirVideo() {
+            document.getElementById('audio-guitarra').pause();
+            document.getElementById('audio-maluma').play();
+            document.getElementById('zona-video').style.display = 'block';
+            let slides = document.querySelectorAll('.slide');
+            let i = 0;
+            slides[0].style.display = 'block';
+            setInterval(() => {
+                slides[i].style.display = 'none';
+                i = (i + 1) % slides.length;
+                slides[i].style.display = 'block';
+            }, 2000);
+        }
+    </script>
+    
+    <audio id="audio-guitarra" src="piano-intro.mp3.m4a"></audio>
+    <audio id="audio-maluma" src="Maluma_-_ADMV_(mp3.pm).mp3"></audio>
+</body>
+</html>
