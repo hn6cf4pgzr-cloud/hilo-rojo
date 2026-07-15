@@ -6,10 +6,8 @@
     <style>
         body { background-color: #FDFBF7; font-family: 'Georgia', serif; text-align: center; padding: 20px; color: #2C2C2C; }
         .contenedor { max-width: 400px; margin: 0 auto; }
-        h1 { color: #8B1E22; font-size: 1.5rem; }
+        h1 { color: #8B1E22; font-size: 1.5rem; margin-top: 20px; }
         .hilo-img { width: 100%; max-width: 300px; border-radius: 15px; margin: 20px 0; cursor: pointer; }
-        #zona-fotos { display: none; margin-top: 20px; }
-        .foto { width: 100%; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
@@ -19,18 +17,17 @@
         
         <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" 
              class="hilo-img" onclick="iniciarSorpresa()" alt="Toca aquí">
-        <p>Toca el hilo rojo para continuar ❤️</p>
+        <p>Toca el hilo rojo para empezar ❤️</p>
 
-        <audio id="musica" src="Maluma_-_ADMV.mp3"></audio>
-        <div id="zona-fotos"></div>
+        <audio id="musica-piano" src="piano-intro.mp3.m4a" autoplay></audio>
+        <audio id="musica-admv" src="Maluma_-_ADMV_(mp3.pm).mp3"></audio>
     </div>
 
     <script>
         function iniciarSorpresa() {
-            const audio = document.getElementById('musica');
-            audio.play();
-            alert("¡La sorpresa ha comenzado!");
-            document.getElementById('zona-fotos').style.display = 'block';
+            document.getElementById('musica-piano').pause();
+            document.getElementById('musica-admv').play();
+            alert("¡Sorpresa! El hilo rojo nos ha unido.");
         }
     </script>
 </body>
